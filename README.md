@@ -23,7 +23,7 @@ From a php, python background, I like to make scripts with function calls embedd
 ## Hello World!!
 So my template for the rest of the exercises is to encapsulate my functions inside the module and call the functions to get them executed. Basic flow is explained below:
 
-1. Enter the following code and save it as [helloModule.exs](https://github.com/PseudoAj/MyElixir/blob/master/HelloWorld/elixrHelloWorld/helloModule.exs):
+* Enter the following code and save it as [helloModule.exs](https://github.com/PseudoAj/MyElixir/blob/master/HelloWorld/elixrHelloWorld/helloModule.exs):
 
 ```elixir
 #This is a test module as a script
@@ -38,7 +38,12 @@ end
 HelloModule.hello()
 ```
 
-2. Run the command `elixir helloModule.exs`
+* Run the command `elixir helloModule.exs` and you should get following output:
+
+```
+Ajay says, hello
+ From Elixir
+```
 
 
 
