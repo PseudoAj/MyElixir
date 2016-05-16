@@ -1,7 +1,9 @@
 ![Elixir image](http://elixir-lang.org/images/logo/logo.png)
 
 # 1. MyElixir
-This repository hosts the source files of my endeavors with Elixir. I have tried to document all the exercises I have done with Elixir along with the basic concepts obtained from various tutorials on the internet.  
+This repository hosts the source files of my endeavors with Elixir. I have tried to document all the exercises I have done with Elixir along with the basic concepts obtained from various tutorials on the internet.
+
+P.S. I have used my name `ajay` throughout my examples and please bare with it.
 
 ## 2. What really is Elixir?
 
@@ -51,7 +53,7 @@ This section covers some of the basics concepts for any programming language. Th
 ### 5.1. Data types
 Elixir supports following data types:
 
-* Integer, Float and Boolean: Default data type and all the arthematic functions are also supported along with it.
+* **Integer, Float and Boolean: **Default data type and all the arthematic functions are also supported along with it.
 ```elixir
 iex(2)> i 10
 Term
@@ -92,7 +94,70 @@ true
 iex(4)> is_boolean(0)    
 false
 ```
+* **Atom: **This is special data type with elixir. Atoms are exciting data type to work with. They are basically constants which have same value and name. If you define `:ajay@github` as an atom then its name and value is `ajay@github`. Interestingly, :true is an atom which has a value true. Let's check it:
+```elixir
+iex(2)> is_boolean(:true)
+true
+```
+* **String, list and tuple: **So Elixir supports series of characters, list; implemented as a linked list and tuples.
+Firstly, Strings are supported in Elixir along with String interpolation(you can change string elements using variables), escape sequences(supports /n,/r). Interestingly, they are represented as binary objects hence:
+```elixir
+iex(4)> is_binary("ajay")
+true
+```
+Lists are implemented as linked lists in Elixir. Similar to python, the lists as enclosed with square brackets `[1,2,3,4,5]`; one special feature with Elixir is it treats first element as the head and rest as tail:
+```elixir
+iex(5)> list = [1,2,3,4,5]
+[1, 2, 3, 4, 5]
+iex(6)> hd(list)
+1
+iex(7)> tl(list)
+[2, 3, 4, 5]
+```
+Also, single quotes imply that it's a char list and double quotes indicate that it is a string:
+```elixir
+iex(8)> i 'ajay'
+Term
+  'ajay'
+Data type
+  List
+Description
+  This is a list of integers that is printed as a sequence of characters
+  delimited by single quotes because all the integers in it represent valid
+  ASCII characters. Conventionally, such lists of integers are referred to as
+  "char lists" (more precisely, a char list is a list of Unicode codepoints,
+  and ASCII is a subset of Unicode).
+Raw representation
+  [97, 106, 97, 121]
+Reference modules
+  List
+iex(9)> i "ajay"
+Term
+  "ajay"
+Data type
+  BitString
+Byte size
+  4
+Description
+  This is a string: a UTF-8 encoded binary. It's printed surrounded by
+  "double quotes" because all UTF-8 encoded codepoints in it are printable.
+Raw representation
+  <<97, 106, 97, 121>>
+Reference modules
+  String, :binary
+```
+Tuple is another data type supported by Elixir, it is a just like List but it can handle heterogenous data types. Main difference from List and Tuple is the fact that List is implemented as linked List and requires a linear time to traverse but quick(big-oh(1)) to insert and Tuple is stored in contiguous memory so the accessing is fast. Bottom line: use lists for data that needs frequent updates and Tuples for data that needs frequent accessing. Example:
+```elixir
+iex(13)> i {:ajay,"Krishna",'Teja'}
+Term
+  {:ajay, "Krishna", 'Teja'}
+Data type
+  Tuple
+Reference modules
+  Tuple
+```
 
+### 5.2. Operators
 
 ## Refernces
 
