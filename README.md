@@ -53,7 +53,7 @@ This section covers some of the basics concepts for any programming language. Th
 ### 5.1. Data types
 Elixir supports following data types:
 
-* **Integer, Float and Boolean: **Default data type and all the arthematic functions are also supported along with it.
+* **Integer, Float and Boolean:** Default data type and all the arthematic functions are also supported along with it.
 ```elixir
 iex(2)> i 10
 Term
@@ -94,12 +94,12 @@ true
 iex(4)> is_boolean(0)    
 false
 ```
-* **Atom: **This is special data type with elixir. Atoms are exciting data type to work with. They are basically constants which have same value and name. If you define `:ajay@github` as an atom then its name and value is `ajay@github`. Interestingly, :true is an atom which has a value true. Let's check it:
+* **Atom:** This is special data type with elixir. Atoms are exciting data type to work with. They are basically constants which have same value and name. If you define `:ajay@github` as an atom then its name and value is `ajay@github`. Interestingly, :true is an atom which has a value true. Let's check it:
 ```elixir
 iex(2)> is_boolean(:true)
 true
 ```
-* **String, list and tuple: **So Elixir supports series of characters, list; implemented as a linked list and tuples.
+* **String, list and tuple:** So Elixir supports series of characters, list; implemented as a linked list and tuples.
 Firstly, Strings are supported in Elixir along with String interpolation(you can change string elements using variables), escape sequences(supports /n,/r). Interestingly, they are represented as binary objects hence:
 ```elixir
 iex(4)> is_binary("ajay")
@@ -115,6 +115,7 @@ iex(7)> tl(list)
 [2, 3, 4, 5]
 ```
 Also, single quotes imply that it's a char list and double quotes indicate that it is a string:
+
 ```elixir
 iex(8)> i 'ajay'
 Term
@@ -147,6 +148,7 @@ Reference modules
   String, :binary
 ```
 Tuple is another data type supported by Elixir, it is a just like List but it can handle heterogenous data types. Main difference from List and Tuple is the fact that List is implemented as linked List and requires a linear time to traverse but quick(big-oh(1)) to insert and Tuple is stored in contiguous memory so the accessing is fast. Bottom line: use lists for data that needs frequent updates and Tuples for data that needs frequent accessing. Example:
+
 ```elixir
 iex(13)> i {:ajay,"Krishna",'Teja'}
 Term
@@ -158,6 +160,7 @@ Reference modules
 ```
 
 ### 5.2. Operators
+
 
 ## Refernces
 
