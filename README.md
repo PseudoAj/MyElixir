@@ -115,7 +115,6 @@ iex(7)> tl(list)
 [2, 3, 4, 5]
 ```
 Also, single quotes imply that it's a char list and double quotes indicate that it is a string:
-
 ```elixir
 iex(8)> i 'ajay'
 Term
@@ -148,7 +147,6 @@ Reference modules
   String, :binary
 ```
 Tuple is another data type supported by Elixir, it is a just like List but it can handle heterogenous data types. Main difference from List and Tuple is the fact that List is implemented as linked List and requires a linear time to traverse but quick(big-oh(1)) to insert and Tuple is stored in contiguous memory so the accessing is fast. Bottom line: use lists for data that needs frequent updates and Tuples for data that needs frequent accessing. Example:
-
 ```elixir
 iex(13)> i {:ajay,"Krishna",'Teja'}
 Term
@@ -160,9 +158,66 @@ Reference modules
 ```
 
 ### 5.2. Operators
+In addition to the basic arthematic operators`(+,-,/,*)` elixir supports `++`, `--` for list management similar to the `<>` for string concatenation. Following code illustrates:
+```elixir
+iex(1)> [10,3,4]++[1,2,3]
+[10, 3, 4, 1, 2, 3]
+iex(2)> "Hello"<>", Ajay"
+"Hello, Ajay"
+```
+Also, one interesting differentiation is using `and, or and not` operators for the Boolean type and `||, && and !` for arguments of different type. Example:
+```elixir
+iex(1)> true and false
+false
+iex(2)> true or false
+true
+iex(3)> !false       
+true
+iex(4)> 1 && 0
+0
+iex(5)> 1 || 0
+1
+```
+Addtionaly, all the comparision operators`(=,==,===,<,>,<=,>=)` are supported. Here, the interesting concept is to compare different data types, Elixir follows the following priority: `number < atom < reference < functions < port < pid < tuple < list < bit string`. Another important point to note is that `=` will do a pattern matching (Left hand side matched against right hand side) in Elixir not assignment. Example:
+```elixir
+iex(1)> [var1,var2,var3]=[:ajay,"Krishna",10]
+[:ajay, "Krishna", 10]
+iex(2)> var1
+:ajay
+iex(3)> var2
+"Krishna"
+iex(4)> :ajay=var1
+:ajay
+iex(5)> [head|tail]=["Ajay","Krishna","Teja","Kavuri"]
+["Ajay", "Krishna", "Teja", "Kavuri"]
+iex(6)> head
+"Ajay"
+iex(7)> :Ajay=head
+** (MatchError) no match of right hand side value: "Ajay"
+```
+Lastly, two more interesting operators are pin operator (`^`) and `_` operator. The `^` operator is used to pattern match against the existing variable rather than rebinding it to a new variable and `_` operator is to bind the residual of the pattern matching. Both are illustrated below:
+```elixir
+iex(1)> var1 = "Ajay"
+"Ajay"
+iex(2)> [^var1,var2]=["Ajay",:Krishna]
+["Ajay", :Krishna]
+iex(3)> [^var1,var2]=[1,:Krishna]     
+** (MatchError) no match of right hand side value: [1, :Krishna]
+iex(4)> [head|_]=["Ajay",:Krishna,10]    
+["Ajay", :Krishna, 10]
+iex(5)> _
+** (CompileError) iex:4: unbound variable _
+
+```
+
+### 5.3. Control flow and looping statements
+The control flow can be achieved using following statements:
+1.
 
 
-## Refernces
+
+
+## References
 
 1. https://learnxinyminutes.com/docs/elixir/
 2. https://github.com/elixir-lang/elixir
