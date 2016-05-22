@@ -210,11 +210,52 @@ iex(5)> _
 
 ```
 
-### 5.3. Control flow and looping statements
+### 5.3. Control flow
 The control flow can be achieved using following statements:
-1.
+* **if/else:** The standard conditional statement in many language the basic syntax:
+```elixir
+if <condition> do
+  #Logic
+else
+  #Other Logic
+end
+```
 
+* **Unless:** Works as the negation for the if/else case. Basic usage:
+```elixir
+iex(2)> unless is_boolean("ajay") do
+...(2)> "This works"                
+...(2)> end                         
+"This works"
+```
 
+* **case:** Case statement is similar to the switch statement in `c` programming language. It can be matched against multiple conditions. Example:
+```elixir
+iex(4)> case {:ajay,:tom,:harry} do
+...(4)> :jerry ->                  
+...(4)> "This won't execute"       
+...(4)> {:ajay,:tom,x} ->          
+...(4)> "Called us?"               
+...(4)> _ ->                       
+...(4)> "I am default"             
+...(4)> end
+"Called us?"
+```
+
+* **cond:** This statement allows us to squeeze multiple conditional statements into one, if multiple conditions are true the first one gets executed. Following example illustrates the usage:
+```elixir
+iex(5)> cond do
+...(5)> is_boolean(true)->
+...(5)> "I am first condition that is true"
+...(5)> 50*2==100->
+...(5)> "I am second statement that is true"
+...(5)> 1+2==4->
+...(5)> "I am not true at all"
+...(5)> true->
+...(5)> "I am default true"
+...(5)> end
+"I am first condition that is true"
+```
 
 
 ## References
@@ -225,3 +266,4 @@ The control flow can be achieved using following statements:
 4. http://exercism.io/languages/elixir
 5. https://github.com/petpartnersllc/code_sample
 6. http://elixir-lang.org/getting-started/basic-types.html
+7. https://excasts.com/
