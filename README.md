@@ -257,6 +257,18 @@ iex(5)> cond do
 "I am first condition that is true"
 ```
 
+## 6. Using mix
+Elixir comes with mix to build and deploy the projects. Following are some of commands that can get you started:
+* Create:
+ `mix new <project title> --module <module title>`
+* Compile:
+`cd <path>`
+`mix compile`
+* Run:
+`iex -S mix`
+* Test:
+`mix test`
+
 
 ## References
 
